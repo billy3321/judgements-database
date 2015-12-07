@@ -10,7 +10,7 @@ class CreateJudgements < ActiveRecord::Migration
       t.string   :department
       t.integer  :jcheck
       t.string   :reason
-      t.text     :content 
+      t.text     :content, limit: 4294967295
       t.datetime :published_at
 
       t.timestamps

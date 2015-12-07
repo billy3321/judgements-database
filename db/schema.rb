@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20151206101509) do
     t.string   "department",   limit: 255
     t.integer  "jcheck",       limit: 4
     t.string   "reason",       limit: 255
-    t.text     "content",      limit: 65535
+    t.text     "content",      limit: 4294967295
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
