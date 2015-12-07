@@ -5,9 +5,9 @@ class CreateJudgements < ActiveRecord::Migration
       t.string   :court_code
       t.string   :court_name
       t.integer  :year
-      t.string   :jcase
-      t.integer  :jno
-      t.string   :department
+      t.string   :word
+      t.integer  :number
+      t.string   :division
       t.integer  :jcheck
       t.string   :reason
       t.text     :content, limit: 4294967295
