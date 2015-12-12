@@ -11,7 +11,7 @@ class CreateJudgements < ActiveRecord::Migration
       t.integer  :jcheck
       t.string   :reason
       t.text     :content, limit: 4294967295
-      t.datetime :published_at
+      t.datetime :adjudged_at
 
       t.timestamps
     end
