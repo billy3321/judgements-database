@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206101509) do
+ActiveRecord::Schema.define(version: 20151212072936) do
 
   create_table "judgements", force: :cascade do |t|
     t.string   "identify",     limit: 255
@@ -30,5 +30,21 @@ ActiveRecord::Schema.define(version: 20151206101509) do
   end
 
   add_index "judgements", ["identify"], name: "index_judgements_on_identify", unique: true, using: :btree
+
+  create_table "schedules", force: :cascade do |t|
+    t.string   "court_code",    limit: 255
+    t.string   "court_name",    limit: 255
+    t.string   "division_code", limit: 255
+    t.string   "division_name", limit: 255
+    t.integer  "roc_year",      limit: 4
+    t.string   "word",          limit: 255
+    t.integer  "number",        limit: 4
+    t.datetime "date"
+    t.string   "court",         limit: 255
+    t.string   "section",       limit: 255
+    t.string   "process",       limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
