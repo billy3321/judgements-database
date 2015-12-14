@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20151212072936) do
     t.integer  "roc_year",      limit: 4
     t.string   "word",          limit: 255
     t.integer  "number",        limit: 4
-    t.string   "court",         limit: 255
+    t.string   "hall",          limit: 255
     t.string   "section",       limit: 255
     t.string   "process",       limit: 255
     t.datetime "begin_at"

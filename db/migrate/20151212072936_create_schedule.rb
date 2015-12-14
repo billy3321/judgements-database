@@ -9,7 +9,7 @@ class CreateSchedule < ActiveRecord::Migration
       t.integer  :roc_year
       t.string   :word
       t.integer  :number
-      t.string   :court
+      t.string   :hall
       t.string   :section
       t.string   :process
       t.datetime :begin_at
