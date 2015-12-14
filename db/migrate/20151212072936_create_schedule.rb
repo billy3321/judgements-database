@@ -6,7 +6,7 @@ class CreateSchedule < ActiveRecord::Migration
       t.string   :court_name
       t.string   :division_code
       t.string   :division_name
-      t.integer  :roc_year
+      t.integer  :year
       t.string   :word
       t.integer  :number
       t.string   :hall

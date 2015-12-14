@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20151212072936) do
     t.string   "court_name",    limit: 255
     t.string   "division_code", limit: 255
     t.string   "division_name", limit: 255
-    t.integer  "roc_year",      limit: 4
+    t.integer  "year",          limit: 4
     t.string   "word",          limit: 255
     t.integer  "number",        limit: 4
     t.string   "hall",          limit: 255
