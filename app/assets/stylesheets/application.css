@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.mdl-layout__header-row .mdl-navigation__link:last-of-type  {
+  padding-right: 0;
+}

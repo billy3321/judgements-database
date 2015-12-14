@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20151212072936) do
   add_index "judgements", ["identify"], name: "index_judgements_on_identify", unique: true, using: :btree
 
   create_table "schedules", force: :cascade do |t|
+    t.string   "identify",      limit: 255
     t.string   "court_code",    limit: 255
     t.string   "court_name",    limit: 255
     t.string   "division_code", limit: 255
@@ -39,12 +40,14 @@ ActiveRecord::Schema.define(version: 20151212072936) do
     t.integer  "roc_year",      limit: 4
     t.string   "word",          limit: 255
     t.integer  "number",        limit: 4
-    t.datetime "date"
     t.string   "court",         limit: 255
     t.string   "section",       limit: 255
     t.string   "process",       limit: 255
+    t.datetime "begin_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "schedules", ["identify"], name: "index_schedules_on_identify", unique: true, using: :btree
 
 end

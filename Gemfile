@@ -32,6 +32,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'jquery-turbolinks'
+gem 'ransack'
+gem 'slim-rails'
+gem 'factory_girl_rails'
+gem 'kaminari'
+gem 'meta-tags'
+gem 'settingslogic'
+gem 'rabl-rails'
+gem 'responders', '~> 2.0'
+gem 'lograge'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
