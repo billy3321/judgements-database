@@ -14,16 +14,30 @@
 ActiveRecord::Schema.define(version: 20151212072936) do
 
   create_table "judgements", force: :cascade do |t|
-    t.string   "identify",    limit: 255
-    t.string   "court_code",  limit: 255
-    t.string   "court_name",  limit: 255
-    t.integer  "year",        limit: 4
-    t.string   "word",        limit: 255
-    t.integer  "number",      limit: 4
-    t.string   "division",    limit: 255
-    t.integer  "jcheck",      limit: 4
-    t.string   "reason",      limit: 255
-    t.text     "content",     limit: 4294967295
+    t.string   "identify",                   limit: 255
+    t.string   "court_code",                 limit: 255
+    t.string   "court_name",                 limit: 255
+    t.string   "division_code",              limit: 255
+    t.string   "division_name",              limit: 255
+    t.integer  "year",                       limit: 4
+    t.string   "word",                       limit: 255
+    t.integer  "number",                     limit: 4
+    t.integer  "jcheck",                     limit: 4
+    t.string   "reason",                     limit: 255
+    t.text     "content",                    limit: 4294967295
+    t.text     "main",                       limit: 65535
+    t.text     "fact",                       limit: 65535
+    t.text     "full_reason",                limit: 65535
+    t.string   "judges",                     limit: 255
+    t.string   "prosecutors",                limit: 255
+    t.text     "lawyers",                    limit: 65535
+    t.string   "clerks",                     limit: 255
+    t.text     "plaintiffs",                 limit: 65535
+    t.text     "defendants",                 limit: 65535
+    t.string   "prosecutor_office",          limit: 255
+    t.text     "creditors",                  limit: 65535
+    t.text     "debtors",                    limit: 65535
+    t.string   "judicial_associate_officer", limit: 255
     t.datetime "adjudged_at"
     t.datetime "created_at"
     t.datetime "updated_at"
