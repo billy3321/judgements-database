@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20151212072936) do
     t.text     "creditors",                  limit: 65535
     t.text     "debtors",                    limit: 65535
     t.string   "judicial_associate_officer", limit: 255
-    t.datetime "adjudged_at"
+    t.date     "adjudged_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -25,7 +25,7 @@ class CreateJudgements < ActiveRecord::Migration
       t.text     :creditors
       t.text     :debtors
       t.string   :judicial_associate_officer
-      t.datetime :adjudged_at
+      t.date     :adjudged_at
 
       t.timestamps
     end
