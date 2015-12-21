@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 20151212072936) do
     t.integer  "jcheck",                     limit: 4
     t.string   "reason",                     limit: 255
     t.text     "content",                    limit: 4294967295
-    t.text     "main",                       limit: 65535
-    t.text     "fact",                       limit: 65535
-    t.text     "full_reason",                limit: 65535
+    t.text     "main",                       limit: 4294967295
+    t.text     "fact",                       limit: 4294967295
+    t.text     "full_reason",                limit: 4294967295
     t.string   "judges",                     limit: 255
     t.string   "prosecutors",                limit: 255
     t.text     "lawyers",                    limit: 65535

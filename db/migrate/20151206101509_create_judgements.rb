@@ -12,9 +12,9 @@ class CreateJudgements < ActiveRecord::Migration
       t.integer  :jcheck
       t.string   :reason
       t.text     :content, limit: 4294967295
-      t.text     :main
-      t.text     :fact
-      t.text     :full_reason
+      t.text     :main, limit: 4294967295
+      t.text     :fact, limit: 4294967295
+      t.text     :full_reason, limit: 4294967295
       t.string   :judges
       t.string   :prosecutors
       t.text     :lawyers
