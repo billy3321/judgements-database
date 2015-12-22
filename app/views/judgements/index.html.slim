@@ -1,28 +1,66 @@
-table.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp
-  thead
-    tr
-      th.mdl-data-table__cell--non-numeric Name
-      th.mdl-data-table__cell--non-numeric Nickname
-      th Age
-      th.mdl-data-table__cell--non-numeric Living?
-  tbody
-    tr
-      td.mdl-data-table__cell--non-numeric John Lennon
-      td.mdl-data-table__cell--non-numeric The smart one
-      td 40
-      td.mdl-data-table__cell--non-numeric No
-    tr
-      td.mdl-data-table__cell--non-numeric Paul McCartney
-      td.mdl-data-table__cell--non-numeric The cute one
-      td 73
-      td.mdl-data-table__cell--non-numeric Yes
-    tr
-      td.mdl-data-table__cell--non-numeric George Harrison
-      td.mdl-data-table__cell--non-numeric The shy one
-      td 58
-      td.mdl-data-table__cell--non-numeric No
-    tr
-      td.mdl-data-table__cell--non-numeric Ringo Starr
-      td.mdl-data-table__cell--non-numeric The funny one
-      td 74
-      td.mdl-data-table__cell--non-numeric Yes
+.container
+  .section
+    = search_form_for @q do |f|
+      .container
+        .row
+          .search-wrapper.input-field.col.s10
+            = f.search_field :content_cont, class: 'validate'
+            = f.label :content_cont, '搜尋判決內容'
+          .col.s2
+            button.waves-effect.waves-light.btn-large.pink name="action" type="submit" 
+              i.material-icons search
+      ul.collapsible data-collapsible="accordion" 
+        li
+          .collapsible-header
+            i.material-icons filter_drama
+            | 更多搜尋選項
+          .collapsible-body
+            .container
+              .row
+                .input-field.col.m6.s12
+                  = f.select :division_code_eq, [["刑事", "M"], ["民事", "V"], ["行政", "A"], ["公懲", "P"]], multiple: true
+                  = f.label :division_code_eq, '案件類別'
+                .input-field.col.m6.s12
+                  = f.select :court_code_eq, [["司法院－刑事補償", "TPC"], ["司法院－訴願決定", "TPU"], ["司法院職務法庭", "TPJ"], ["最高法院", "TPS"], ["最高行政法院", "TPA"], ["公務員懲戒委員會", "TPP"], ["臺灣高等法院", "TPH"], ["臺灣高等法院－訴願決定", "TPH"], ["臺北高等行政法院", "TPB"], ["臺中高等行政法院", "TCB"], ["高雄高等行政法院", "KSB"], ["智慧財產法院", "IPC"], ["臺灣高等法院 臺中分院", "TCH"], ["臺灣高等法院 臺南分院", "TNH"], ["臺灣高等法院 高雄分院", "KSH"], ["臺灣高等法院 花蓮分院", "HLH"], ["臺灣臺北地方法院", "TPD"], ["臺灣士林地方法院", "SLD"], ["臺灣新北地方法院", "PCD"], ["臺灣宜蘭地方法院", "ILD"], ["臺灣基隆地方法院", "KLD"], ["臺灣桃園地方法院", "TYD"], ["臺灣新竹地方法院", "SCD"], ["臺灣苗栗地方法院", "MLD"], ["臺灣臺中地方法院", "TCD"], ["臺灣彰化地方法院", "CHD"], ["臺灣南投地方法院", "NTD"], ["臺灣雲林地方法院", "ULD"], ["臺灣嘉義地方法院", "CYD"], ["臺灣臺南地方法院", "TND"], ["臺灣高雄地方法院", "KSD"], ["臺灣花蓮地方法院", "HLD"], ["臺灣臺東地方法院", "TTD"], ["臺灣屏東地方法院", "PTD"], ["臺灣澎湖地方法院", "PHD"], ["福建高等法院金門分院", "KMH"], ["福建金門地方法院", "KMD"], ["福建連江地方法院", "LCD"], ["臺灣高雄少年及家事法院", "KSY"]], multiple: true
+                  = f.label :court_code_eq, '法院'
+                .input-field.col.m6.s12
+                  = f.search_field :reason_cont, class: 'validate'
+                  = f.label :reason_cont, '案由'
+                .input-field.col.m6.s12
+                  = f.search_field :judges_cont, class: 'validate'
+                  = f.label :judges_cont, '法官'
+                .input-field.col.m6.s12
+                  = f.search_field :defendants_cont, class: 'validate'
+                  = f.label :defendants_cont, '當事人'
+                .input-field.col.m6.s12
+                  = f.search_field :lawyers_cont, class: 'validate'
+                  = f.label :lawyers_cont, '律師'
+                .input-field.col.m6.s12
+                  = f.search_field :adjudged_at_gteq, class: 'datepicker'
+                  = f.label :adjudged_at_gteq, '時間起'
+                .input-field.col.m6.s12
+                  = f.search_field :adjudged_at_lteq, class: 'datepickere'
+                  = f.label :adjudged_at_lteq, '時間軼'
+  .section
+  .container
+    table.responsive-table.centered.highlight
+      thead
+        tr
+          th data-field="judge" 法院
+          th data-field="division" 類別
+          th data-field="identify" 字號
+          th data-field="date" 裁判日期
+          th data-field="reason" 案由
+          th data-field="action" 
+      tbody
+        - @judgements.each do |j|
+          tr
+            td = j.court_name
+            td = j.division_name
+            td 
+              | 字號：#{j.year}年度#{j.word}字第#{j.number}號
+            td = j.adjusted_at.strftime('%Y年%m月%d日')
+            td = j.reason
+            td = link_to 'Detail', judgement_path(j), class: 'waves-effect waves-light btn pink'
+    ul.pagination.center
+      = paginate @judgements

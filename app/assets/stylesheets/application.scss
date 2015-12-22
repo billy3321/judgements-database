@@ -14,6 +14,13 @@
  *= require_self
  */
 
-.mdl-layout__header-row .mdl-navigation__link:last-of-type  {
-  padding-right: 0;
+@import "materialize/components/color";
+$primary-color: color("indigo", "darken-1") !default;
+@import "materialize";
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
 }

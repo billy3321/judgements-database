@@ -11,6 +11,17 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
+//= require materialize-sprockets
 //= require_tree .
+
+$(document).ready(function () {
+  $('.button-collapse').sideNav();
+  $('select').material_select();
+  $('.datepicker').pickadate({
+    selectMonths: true,
+    selectYears: 60
+  });
+});

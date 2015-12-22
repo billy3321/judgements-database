@@ -42,6 +42,7 @@ gem 'settingslogic'
 gem 'rabl-rails'
 gem 'responders', '~> 2.0'
 gem 'lograge'
+gem 'materialize-sass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
