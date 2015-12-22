@@ -25,6 +25,6 @@
         | 法官：
         = @judgement.judges.join('、')
     .content
-      = @judgement.content
+      = simple_text(@judgement.content)
     .center
       = link_to '回列表', judgements_path, class: 'waves-effect waves-light btn pink'
