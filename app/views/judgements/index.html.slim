@@ -59,7 +59,7 @@
             td = j.division_name
             td 
               | 字號：#{j.year}年度#{j.word}字第#{j.number}號
-            td = j.adjusted_at.strftime('%Y年%m月%d日')
+            td = j.adjudged_at.strftime('%Y年%m月%d日')
             td = j.reason
             td = link_to 'Detail', judgement_path(j), class: 'waves-effect waves-light btn pink'
     ul.pagination.center

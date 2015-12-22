@@ -3,7 +3,7 @@
     .info
       p 
         | 日期：2014年9月1日
-        = @judgement.adjusted_at.strftime('%Y年%m月%d日')
+        = @judgement.adjudged_at.strftime('%Y年%m月%d日')
       p 
         | 法院：
         = @judgement.court_name
