@@ -5,6 +5,6 @@ class JudgementsController < ApplicationController
   end
 
   def show
-    @judgement = params[:id]
+    @judgement = Judgement.find(params[:id])
   end
 end
